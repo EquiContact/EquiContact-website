@@ -1,0 +1,10 @@
+title: "EquiContact"
+description: "Hierarchical SE(3) Vision-to-Force Equivariant Policy for Contact-Rich Tasks"
+theme: null
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Optional: nicer URLs
+permalink: pretty
