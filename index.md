@@ -17,12 +17,11 @@ layout: none
     <div class="hero">
       <div class="hero-left">
         <h1>EquiContact</h1>
-        <p class="subtitle">Hierarchical SE(3) Vision-to-Force Equivariant Policy for Contact-Rich Tasks</p>
+        <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
 
         <p class="authors">
-          <b>Joohwan Seo</b>, Coauthor A, Coauthor B, …
+            Anonymous Authors
         </p>
-        <p class="affil">UC Berkeley • Horowitz Lab</p>
 
         <div class="badges">
           <a class="badge" href="[PDF]">Paper (PDF)</a>
