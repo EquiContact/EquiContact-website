@@ -17,21 +17,13 @@
 
         <p class="authors">Anonymous Authors</p>
 
-        <div class="badges">
-          <a class="badge" href="[PDF]">Paper (PDF)</a>
-          <a class="badge" href="[arXiv]">arXiv</a>
-          <a class="badge" href="[supp]">Supplementary</a>
-          <a class="badge" href="[code]">Code</a>
-          <a class="badge" href="[data]">Data</a>
-        </div>
-
         <div class="section">
           <h2>TL;DR</h2>
           <p>
-            We present <b>EquiContact<b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy<b> for contact-rich manipulation that achieves <b>spatial generalization<b> by 
+            We present <b>EquiContact</b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy</p>b> for contact-rich manipulation that achieves <b>spatial generalization</b> by 
             (i) estimating a global reference frame from point clouds (Diff-EDF), 
-            (ii) running a left-invariant localized visuomotor policy in the end-effector frame (<b>G-CompACT<b>) conditioned on language, wrist RGB and proprioceptive, and 
-            (iii) executing actions with an equivariant geometric admittance controller (<b>GAC<b>). 
+            (ii) running a left-invariant localized visuomotor policy in the end-effector frame (<b>G-CompACT</b>) conditioned on language, wrist RGB and proprioceptive, and 
+            (iii) executing actions with an equivariant geometric admittance controller (<b>GAC</b>). 
             Across peg-in-hole, wiping, and screwing in real world, EquiContact improves success under large scene transformations and yields safer, 
             smoother contact interactions than non-compliant or non-equivariant baselines.
           </p>
@@ -95,10 +87,15 @@
       <div style="height:14px;"></div>
 
       <div class="figure">
-        <img src="assets/imgs/pipeline.png" alt="Pipeline figure" />
+        <img src="assets/imgs/Main_figure2.png" alt="Pipeline figure" />
       </div>
       <p class="small">
-        Figure: Overview of EquiContact with emphasis on G-CompACT. (Replace with your final main figure.)
+        Figure: We propose an EquiContact, a hierarchical, provably SE(3) vision-to-force equivariant policy for spatially generalizable contact-rich tasks. 
+        <b>(Left)</b> The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF) and a Geometric Compliant Action Chunking Transformer (G-CompACT). 
+        The Diff-EDF, the high-level planner, first processes the scene point cloud to produce reference frames for pick-and-place tasks for the G-CompACT to anchor on. 
+        With the provided reference frames, the G-CompACT outputs the relative pose and admittance gains from real-time wrist cameras and proprioceptive feedback. 
+        The output relative pose and admittance gains are then fed to geometric admittance control (GAC) that provides compliant motion command to the robot. 
+        <b>(Right)</b> The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation, given the reference frames.
       </p>
     </div>
 
