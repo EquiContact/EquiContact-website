@@ -20,8 +20,9 @@ layout: none
         <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
 
         <p class="authors">
-            Anonymous Authors
+          Anonymous Authors
         </p>
+        <p class="affil">UC Berkeley • Horowitz Lab</p>
 
         <div class="badges">
           <a class="badge" href="[PDF]">Paper (PDF)</a>
