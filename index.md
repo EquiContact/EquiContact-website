@@ -19,10 +19,7 @@ layout: none
         <h1>EquiContact</h1>
         <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
 
-        <p class="authors">
-          Anonymous Authors
-        </p>
-        <p class="affil">UC Berkeley • Horowitz Lab</p>
+        <p class="authors">Anonymous Authors</p>
 
         <div class="badges">
           <a class="badge" href="[PDF]">Paper (PDF)</a>
@@ -146,17 +143,6 @@ layout: none
     </div>
 
     <div class="section">
-      <h2>Citation</h2>
-      <p class="small">If you find this useful, please cite:</p>
-      <pre><code>@inproceedings{equicontact2026,
-  title     = {EquiContact: Hierarchical SE(3) Vision-to-Force Equivariant Policy for Contact-Rich Tasks},
-  author    = {Seo, Joohwan and ...},
-  booktitle = {Robotics: Science and Systems (RSS)},
-  year      = {2026}
-}</code></pre>
-    </div>
-
-    <div class="section">
       <h2>Links</h2>
       <ul>
         <li><b>Paper:</b> <a href="[PDF]">PDF</a> • <a href="[arXiv]">arXiv</a> • <a href="[supp]">Supplementary</a></li>
@@ -167,7 +153,7 @@ layout: none
     </div>
 
     <div class="footer">
-      Last updated: 2026-01-15.
+      Last updated: 2026-01-23.
     </div>
 
   </div>
