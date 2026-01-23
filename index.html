@@ -28,17 +28,27 @@
         <div class="section">
           <h2>TL;DR</h2>
           <p>
-            We present <b>EquiContact</b>, a hierarchical policy that is <b>SE(3)-equivariant</b> and outputs
-            force/impedance-relevant actions for contact-rich manipulation. Our key contribution is
-            <b>G-CompACT</b>: a geometry-consistent composition mechanism that improves robustness under
-            large pose changes.
+            We present <b>EquiContact<b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy<b> for contact-rich manipulation that achieves <b>spatial generalization<b> by 
+            (i) estimating a global reference frame from point clouds (Diff-EDF), 
+            (ii) running a left-invariant localized visuomotor policy in the end-effector frame (<b>G-CompACT<b>) conditioned on language, wrist RGB and proprioceptive, and 
+            (iii) executing actions with an equivariant geometric admittance controller (<b>GAC<b>). 
+            Across peg-in-hole, wiping, and screwing in real world, EquiContact improves success under large scene transformations and yields safer, 
+            smoother contact interactions than non-compliant or non-equivariant baselines.
           </p>
         </div>
 
         <div class="section">
           <h2>Abstract</h2>
           <p>
-            [Paste your abstract here.]
+            This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations. 
+            We focus on achieving robust spatial generalization of the policy for the contact-rich tasks trained from a small number of demonstrations.
+            We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF) 
+            and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT). 
+            G-CompACT operates using only localized observations (geometrically consistent error vectors (GCEV), force-torque readings, and wrist-mounted RGB images) 
+            and produces actions defined in the end-effector frame.
+            Through these design choices, we show that the entire EquiContact pipeline is SE(3)-equivariant, from perception to force control. 
+            We also outline three key components for spatially generalizable contact-rich policies: compliance, localized policies, and induced equivariance. 
+            Real-world experiments on peg-in-hole (PiH), screwing, and surface wiping tasks demonstrate a near-perfect success rate and robust generalization to unseen spatial configurations, validating the proposed framework and principles.
           </p>
         </div>
       </div>
