@@ -29,24 +29,30 @@ a:hover{ text-decoration:underline; }
 /* ===== Header ===== */
 .page-title{
   text-align:center;
-  font-size: 80px;     /* increase/decrease here */
+  font-size: 64px;     /* increase/decrease here */
   line-height: 1.05;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   letter-spacing: -0.03em;
 }
 
 .subtitle{
   text-align:center;
   color: var(--muted);
-  font-size: 50px;
-  margin: 0 0 10px;
+  font-size: 48px;
+  margin: 0 0 20px;
 }
 
 .authors{
   text-align:center;
   color: var(--muted);
-  font-size: 16px;
-  margin: 0 0 14px;
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+.affiliations{
+  text-align:center;
+  color: var(--muted);
+  font-size: 20px;
+  margin: 0 0 26px;
 }
 
 /* ===== Badges ===== */
