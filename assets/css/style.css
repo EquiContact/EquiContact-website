@@ -62,6 +62,6 @@ pre{
 .footer{ margin-top: 40px; color: var(--muted); font-size: 13px; }
 
 .tldr p{
-  font-size: 17px;   /* try 17–19px */
+  font-size: 20px;   /* try 17–19px */
   line-height: 1.65;
 }
