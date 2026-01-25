@@ -12,7 +12,7 @@
 
     <!-- Header -->
     <h1 class="page-title">EquiContact</h1>
-    <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
+    <p class="subtitle">Hierarchical SE(3) Vision-to-Force Equivariant Policy for Contact-Rich Tasks</p>
     <p class="authors">Joohwan Seo, Coauthor A, Coauthor B</p>
 
     <div class="badges">
@@ -50,10 +50,14 @@
     <div class="panel abstract">
       <h2>Abstract</h2>
       <p>
-        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations.
-        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF)
-        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT).
-        Real-world experiments on peg-in-hole, screwing, and surface wiping demonstrate robust generalization to unseen spatial configurations.
+        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations. 
+        We focus on achieving robust spatial generalization of the policy for the contact-rich tasks trained from a small number of demonstrations.
+        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF) 
+        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT). 
+        G-CompACT operates using only localized observations (geometrically consistent error vectors (GCEV), force-torque readings, and wrist-mounted RGB images) and produces actions defined in the end-effector frame.
+        Through these design choices, we show that the entire EquiContact pipeline is $\SE$-equivariant, from perception to force control. 
+        We also outline three key components for spatially generalizable contact-rich policies: compliance, localized policies, and induced equivariance. 
+        Real-world experiments on peg-in-hole (PiH), screwing, and surface wiping tasks demonstrate a near-perfect success rate and robust generalization to unseen spatial configurations, validating the proposed framework and principles. 
       </p>
     </div>
 
