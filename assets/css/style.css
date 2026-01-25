@@ -2,66 +2,150 @@
   --text:#111;
   --muted:#555;
   --border:#e6e6e6;
-  --bg:#fff;
+
+  --bg:#ffffff;
+  --panel1:#f1f1f1;     /* TL;DR */
+  --panel2:#f7f7f7;     /* Abstract */
+
   --max: 980px;
 }
 
-html,body{ background:var(--bg); color:var(--text); margin:0; padding:0; }
-body{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      line-height: 1.5; }
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  line-height: 1.6;
+}
 
 a{ color:#0b57d0; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
-.container{ max-width: var(--max); margin: 0 auto; padding: 32px 18px 60px; }
+.container{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 34px 18px 70px;
+}
 
-.hero{ display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
-.hero-left{ flex: 1 1 520px; }
-.hero-right{ flex: 0 0 360px; max-width: 360px; }
+/* ===== Header ===== */
+.page-title{
+  text-align:center;
+  font-size: 54px;     /* increase/decrease here */
+  line-height: 1.05;
+  margin: 0 0 10px;
+  letter-spacing: -0.03em;
+}
 
-h1{ margin: 0 0 10px; font-size: 34px; letter-spacing: -0.02em; }
-.subtitle{ margin: 0 0 16px; color: var(--muted); font-size: 16px; }
+.subtitle{
+  text-align:center;
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0 0 10px;
+}
 
-.badges{ display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 6px; }
-.badge{ border:1px solid var(--border); padding:7px 10px; border-radius:999px; font-size: 13px; color: var(--text); background:#fafafa; }
+.authors{
+  text-align:center;
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0 0 14px;
+}
 
-.section{ margin-top: 34px; padding-top: 10px; border-top: 1px solid var(--border); }
-.section h2{ margin: 0 0 12px; font-size: 22px; }
-
-.authors{ margin: 10px 0 0; color: var(--muted); }
-.affil{ margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-
-.video{
+/* ===== Badges ===== */
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin: 10px 0 22px;
+}
+.badge{
+  display:inline-block;
   border:1px solid var(--border);
-  border-radius: 14px;
+  background:#fafafa;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* ===== Sections ===== */
+.section{
+  margin-top: 26px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.section h2{
+  margin: 0 0 12px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.small{
+  color:var(--muted);
+  font-size: 13px;
+}
+
+/* Gray panels for TL;DR + Abstract */
+.panel{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-top: 18px;
+}
+.panel h2{ margin-top: 0; }
+.panel.tldr{ background: var(--panel1); border-top: none; }
+.panel.abstract{ background: var(--panel2); border-top: none; }
+
+/* Optional: make TL;DR text a bit larger */
+.panel.tldr p{
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ===== Media blocks ===== */
+.video, .figure{
+  border:1px solid var(--border);
+  border-radius: 16px;
   overflow:hidden;
   background:#000;
 }
-.video video, .video iframe{ width:100%; height:auto; display:block; }
+.figure{ background:#fff; }
+.video video, .video iframe, .figure img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 
-.figure{
+/* ===== Cards/Grid ===== */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.card{
   border:1px solid var(--border);
-  border-radius: 14px;
-  overflow:hidden;
+  border-radius:16px;
+  padding: 14px;
   background:#fff;
 }
-.figure img{ width:100%; height:auto; display:block; }
+.card h3{
+  margin:0 0 8px;
+  font-size: 16px;
+}
 
-.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; }
-.card{ border:1px solid var(--border); border-radius:14px; padding:14px; background:#fff; }
-.card h3{ margin:0 0 8px; font-size:16px; }
-.small{ color:var(--muted); font-size: 13px; }
-
+/* ===== Lists & Code ===== */
+ul{ padding-left: 20px; }
 pre{
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:14px;
+  border-radius: 16px;
+  padding: 14px;
   overflow:auto;
   background:#fafafa;
 }
-.footer{ margin-top: 40px; color: var(--muted); font-size: 13px; }
 
-.tldr p{
-  font-size: 20px;   /* try 17–19px */
-  line-height: 1.65;
+/* ===== Footer ===== */
+.footer{
+  margin-top: 38px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align:center;
 }

@@ -9,75 +9,72 @@
 
 <body>
   <div class="container">
-    <h1>EquiContact</h1>
-    <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
 
-    <p class="authors">Anonymous Authors</p>
+    <!-- Header -->
+    <h1 class="page-title">EquiContact</h1>
+    <p class="subtitle">A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
+    <p class="authors">Joohwan Seo, Coauthor A, Coauthor B</p>
 
     <div class="badges">
       <a class="badge" href="assets/pdfs/main.pdf">Main manuscript</a>
       <a class="badge" href="assets/pdfs/appendix.pdf">Appendix</a>
+      <a class="badge" href="[arXiv]">arXiv</a>
+      <a class="badge" href="[code]">Code (coming)</a>
     </div>
 
-    <div class="section tldr">
+    <!-- TL;DR (gray panel) -->
+    <div class="panel tldr">
       <h2>TL;DR</h2>
       <p>
-      We present <b>EquiContact</b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy</b> for contact-rich manipulation that achieves <b>spatial generalization</b> by
-      (i) estimating a global reference frame from point clouds (Diff-EDF),
-      (ii) running a left-invariant localized visuomotor policy in the end-effector frame (<b>G-CompACT</b>) conditioned on language, wrist RGB, and proprioception, and
-      (iii) executing actions with an equivariant geometric admittance controller (<b>GAC</b>).
-      Across peg-in-hole, wiping, and screwing in the real world, EquiContact improves success under large scene transformations and yields safer,
-      smoother contact interactions than non-compliant or non-equivariant baselines.
-    </p>
-    </div>
-
-    <div class="section">
-      <h2>EquiContact Full Pipeline for Peg-in-Hole task</h2>
-      <div class="video">
-        <video controls playsinline>
-          <source src="assets/videos/EquiContact_Full_Shortversions.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Abstract</h2>
-      <p>
-        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations. 
-        We focus on achieving robust spatial generalization of the policy for the contact-rich tasks trained from a small number of demonstrations.
-        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF) 
-        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT). 
-        G-CompACT operates using only localized observations (geometrically consistent error vectors (GCEV), force-torque readings, and wrist-mounted RGB images) 
-        and produces actions defined in the end-effector frame.
-        Through these design choices, we show that the entire EquiContact pipeline is SE(3)-equivariant, from perception to force control. 
-        We also outline three key components for spatially generalizable contact-rich policies: compliance, localized policies, and induced equivariance. 
-        Real-world experiments on peg-in-hole (PiH), screwing, and surface wiping tasks demonstrate a near-perfect success rate and robust generalization to unseen spatial configurations, validating the proposed framework and principles.
+        We present <b>EquiContact</b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy</b> for contact-rich manipulation that achieves
+        <b>spatial generalization</b> by (i) estimating a global reference frame from point clouds (Diff-EDF),
+        (ii) running a left-invariant localized visuomotor policy in the end-effector frame (<b>G-CompACT</b>) conditioned on language, wrist RGB, and proprioception,
+        and (iii) executing actions with an equivariant geometric admittance controller (<b>GAC</b>).
       </p>
     </div>
 
+    <!-- Teaser video (placed between TL;DR and Abstract) -->
+    <div class="section">
+      <h2>Teaser Video</h2>
+      <div class="video">
+        <video controls playsinline poster="assets/imgs/teaser.jpg">
+          <source src="assets/videos/teaser.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="small" style="margin-top:10px;">
+        Tip: keep the teaser ~10–30s, 720p, H.264, and ideally &lt; 50MB.
+      </p>
+    </div>
+
+    <!-- Abstract (lighter gray panel) -->
+    <div class="panel abstract">
+      <h2>Abstract</h2>
+      <p>
+        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations.
+        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF)
+        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT).
+        Real-world experiments on peg-in-hole, screwing, and surface wiping demonstrate robust generalization to unseen spatial configurations.
+      </p>
+    </div>
+
+    <!-- Method -->
     <div class="section">
       <h2>Method</h2>
 
       <div class="grid">
         <div class="card">
           <h3>Equivariant perception → action</h3>
-          <p class="small">
-            Describe the vision backbone and how you form SE(3)-equivariant features (1–2 sentences).
-          </p>
+          <p class="small">One or two sentences about your backbone and SE(3)-equivariant representation.</p>
         </div>
 
         <div class="card">
           <h3><b>G-CompACT</b> (main contribution)</h3>
-          <p class="small">
-            Explain the group-consistent composition / conditioning and why it matters for extreme transformations.
-          </p>
+          <p class="small">One or two sentences about composition / induced equivariance / why it improves extreme transformations.</p>
         </div>
 
         <div class="card">
           <h3>Pose estimator (replaceable)</h3>
-          <p class="small">
-            Mention Diff-EDF (or others) as a swappable module so the page emphasizes G-CompACT.
-          </p>
+          <p class="small">Mention Diff-EDF is swappable and the key novelty is the low-level compliant policy / controller integration.</p>
         </div>
       </div>
 
@@ -86,16 +83,12 @@
       <div class="figure">
         <img src="assets/imgs/Main_figure2.png" alt="Pipeline figure" />
       </div>
-      <p class="small">
-        Figure: We propose an EquiContact, a hierarchical, provably SE(3) vision-to-force equivariant policy for spatially generalizable contact-rich tasks. 
-        <b>(Left)</b> The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF) and a Geometric Compliant Action Chunking Transformer (G-CompACT). 
-        The Diff-EDF, the high-level planner, first processes the scene point cloud to produce reference frames for pick-and-place tasks for the G-CompACT to anchor on. 
-        With the provided reference frames, the G-CompACT outputs the relative pose and admittance gains from real-time wrist cameras and proprioceptive feedback. 
-        The output relative pose and admittance gains are then fed to geometric admittance control (GAC) that provides compliant motion command to the robot. 
-        <b>(Right)</b> The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation, given the reference frames.
+      <p class="small" style="margin-top:10px;">
+        Figure: Overview of EquiContact. (Replace with your final main figure.)
       </p>
     </div>
 
+    <!-- Results -->
     <div class="section">
       <h2>Results (Videos)</h2>
 
@@ -107,21 +100,17 @@
               <source src="assets/videos/exp1.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">
-            One-liner describing the setup + what’s impressive.
-          </p>
+          <p class="small" style="margin-top:10px;">Short caption about what the clip demonstrates.</p>
         </div>
 
         <div class="card">
-          <h3>Task B (contact-rich)</h3>
+          <h3>Peg-in-hole / Wiping / Screwing</h3>
           <div class="video" style="margin-top:10px;">
             <video controls playsinline>
               <source src="assets/videos/exp2.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">
-            Compare against baseline / ablations succinctly.
-          </p>
+          <p class="small" style="margin-top:10px;">Short caption about success rate / baseline comparison.</p>
         </div>
 
         <div class="card">
@@ -131,29 +120,23 @@
               <source src="assets/videos/ablation_gcompact.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">
-            Highlight failure modes (drift, wrong contact, instability, etc.).
-          </p>
+          <p class="small" style="margin-top:10px;">Failure modes: drift, wrong contact, instability, etc.</p>
         </div>
       </div>
-
-      <p class="small" style="margin-top:12px;">
-        Tip: keep clips 10–30 seconds and show only 3–8 best ones.
-      </p>
     </div>
 
+    <!-- Links -->
     <div class="section">
       <h2>Links</h2>
       <ul>
-        <li><b>Paper:</b> <a href="[PDF]">PDF</a> • <a href="[arXiv]">arXiv</a> • <a href="[supp]">Supplementary</a></li>
-        <li><b>Code:</b> <a href="[code]">GitHub repo</a></li>
+        <li><b>Paper:</b> <a href="assets/pdfs/main.pdf">Main manuscript</a> • <a href="assets/pdfs/appendix.pdf">Appendix</a> • <a href="[arXiv]">arXiv</a></li>
+        <li><b>Code:</b> <a href="[code]">GitHub (coming soon)</a></li>
         <li><b>Dataset:</b> <a href="[data]">Download</a></li>
-        <li><b>Contact:</b> your-email [at] berkeley.edu</li>
       </ul>
     </div>
 
     <div class="footer">
-      Last updated: 2026-01-23.
+      Last updated: 2026-01-25.
     </div>
 
   </div>
