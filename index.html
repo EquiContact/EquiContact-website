@@ -81,6 +81,7 @@
       </p>
       <p style="margin-top:10px;">
         We propose an EquiContact, a hierarchical, provably SE(3) vision-to-force equivariant policy for spatially generalizable contact-rich tasks. 
+
         (<b>Left</b>) The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF), a Geometric Compliant Action Chunking Transformer (G-CompACT), and a Geometric Admittance Controller (GAC).
         <ul class="bullets">
           <li><b>Diff-EDF:</b> processes the scene point cloud to estimate global reference frames for pick-and-place tasks.</li>
@@ -89,6 +90,12 @@
         </ul>
         
         (<b>Right</b>) The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation, given the reference frames.
+      </p>
+
+      <h3> “Anchoring localized policy on globally estimated reference frames for spatial generalization” </h3>
+      <p>
+        The key idea of EquiContact is to combine a globally estimated reference frame with a localized visuomotor policy defined in the end-effector frame.
+        This design allows the policy to generalize spatially to unseen task configurations by leveraging the equivariant properties of both the global frame estimation and the localized policy.
       </p>
     </div>
 
