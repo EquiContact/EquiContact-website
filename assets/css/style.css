@@ -114,6 +114,24 @@ a:hover{ text-decoration:underline; }
   font-size: 27px;   /* Method title */
 }
 
+/* A section that can exceed the main container width */
+.wide-section{
+  max-width: 1400px;   /* try 1200–1600 */
+  margin: 0 auto;
+  padding: 0 18px;     /* match your container side padding */
+}
+
+.grid.grid-3big{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+@media (max-width: 1100px){
+  .grid.grid-3big{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px){
+  .grid.grid-3big{ grid-template-columns: 1fr; }
+}
+
 .section.method .card h3{
   font-size: 24px;   /* card headings */
 }
