@@ -8,7 +8,7 @@
   --panel2:#f7f7f7;     /* Abstract */
 
   --max: 980px;         /* normal content width */
-  --wide: 1200px;       /* wide-section max width */
+  --wide: 1500px;       /* wide-section max width */
 }
 
 *{ box-sizing: border-box; }
@@ -45,6 +45,9 @@ a:hover{ text-decoration:underline; }
   margin: 0 auto;
   padding: 0 18px;
 }
+
+.wide-section, .container { overflow-x: hidden; }
+video, img { max-width: 100%; }
 
 /* ======================
    Header typography
