@@ -13,7 +13,8 @@
     <!-- Header -->
     <h1 class="page-title">EquiContact</h1>
     <p class="subtitle">Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
-    <p class="authors">Joohwan Seo, Arvind Kruthiventy, Soomi Lee, Megan Teng, Seoyeon Choi, Xiang Xhang, Jongeun Choi, Roberto Horowitz</p>
+    <p class="authors">Joohwan Seo, Arvind Kruthiventy, Soomi Lee, Megan Teng, Seoyeon Choi, Xiang Xhang, <br>
+       Jongeun Choi, and Roberto Horowitz</p>
     <!-- Add Affiliations -->
     <p class="affiliations">
       UC Berkeley, Yonsei University
@@ -128,35 +129,69 @@
     <div class="section">
       <h2>Results (Videos)</h2>
 
+      <h3>Surface Wiping & Screwing Tasks</h3>
       <div class="grid">
         <div class="card">
-          <h3>Extreme transformation generalization</h3>
+          <h3>Wiping (Success)</h3>
           <div class="video" style="margin-top:10px;">
             <video controls playsinline>
-              <source src="assets/videos/exp1.mp4" type="video/mp4" />
+              <source src="assets/videos/Wiping_short.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">Short caption about what the clip demonstrates.</p>
         </div>
 
         <div class="card">
-          <h3>Peg-in-hole / Wiping / Screwing</h3>
+          <h3>Screwing (Success)</h3>
           <div class="video" style="margin-top:10px;">
             <video controls playsinline>
-              <source src="assets/videos/exp2.mp4" type="video/mp4" />
+              <source src="assets/videos/screw_short.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">Short caption about success rate / baseline comparison.</p>
+        </div>
+        <p style="margin-top:10px;">
+          Videos demonstrating EquiContact's spatial generalization on surface wiping and screwing tasks. 
+          The policy is trained only on a fixed configuration but successfully generalizes to unseen configurations on flat and tilted platforms.
+        </p>
+      </div>
+
+      <!-- Benchmarks / Ablations -->
+      <div style="height:18px;"></div>
+      <h3>Benchmarks and Ablations</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>Benchmark: Extreme Transformations</h3>
+          <div class="video" style="margin-top:10px;">
+            <video controls playsinline>
+              <source src="assets/videos/benchmark_extreme.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            Performance under large SE(3) shifts (rotation + translation).
+          </p>
         </div>
 
         <div class="card">
           <h3>Ablation: w/o G-CompACT</h3>
           <div class="video" style="margin-top:10px;">
             <video controls playsinline>
-              <source src="assets/videos/ablation_gcompact.mp4" type="video/mp4" />
+              <source src="assets/videos/ablation_no_gcompact.mp4" type="video/mp4" />
             </video>
           </div>
-          <p class="small" style="margin-top:10px;">Failure modes: drift, wrong contact, instability, etc.</p>
+          <p class="small" style="margin-top:10px;">
+            Failure modes: drift, wrong contact, instability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ablation: w/o Compliance (Fixed Gains)</h3>
+          <div class="video" style="margin-top:10px;">
+            <video controls playsinline>
+              <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            Shows why real-time gain modulation matters for contact safety.
+          </p>
         </div>
       </div>
     </div>
