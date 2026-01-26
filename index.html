@@ -133,35 +133,43 @@
 
       <div class="grid two-col">
         <div class="vidcell">
-          <h3>Wiping (Success)</h3>
+          <h3>Surface Wiping Task</h3>
           <div class="video video-md" style="margin-top:10px;">
             <video controls playsinline>
               <source src="assets/videos/Wiping_short.mp4" type="video/mp4" />
             </video>
           </div>
+          <p style="margin-top:10px;">
+            Task: erase a drawn pattern on a whiteboard surface. <br>
+            <b>Success Rate</b> Flat: 10/10, Tilted: 10/10
+          </p>
         </div>
 
         <div class="vidcell">
-          <h3>Screwing (Success)</h3>
+          <h3>Screwing Task</h3>
           <div class="video video-md" style="margin-top:10px;">
             <video controls playsinline>
               <source src="assets/videos/screw_short.mp4" type="video/mp4" />
             </video>
           </div>
+          <p style="margin-top:10px;">
+            Task: screw-lock the peg. <br>
+            <b>Success Rate</b> Flat: 10/10, Tilted: 9/10
+          </p>
         </div>
 
         <p class="span-2" style="margin-top:10px;">
           Videos demonstrating EquiContact's spatial generalization on surface wiping and screwing tasks.
-          The policy is trained only on a fixed configuration but successfully generalizes to unseen configurations on flat and tilted platforms.
+          The policy is trained only on a fixed configuration but successfully generalizes to unseen configurations on flat and tilted platforms without much degradation.
         </p>
       </div>
 
       <!-- Benchmarks / Ablations -->
       <div style="height:18px;"></div>
-      <h3>Benchmarks and Ablations</h3>
+      <h3>Benchmark Experiments</h3>
       <div class="grid">
         <div class="card">
-          <h3>Benchmark: Extreme Transformations</h3>
+          <h3> ACT w/o GAC (In-dist) </h3>
           <div class="video" style="margin-top:10px;">
             <video controls playsinline>
               <source src="assets/videos/benchmark_extreme.mp4" type="video/mp4" />
