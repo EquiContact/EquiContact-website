@@ -137,6 +137,16 @@ a:hover{ text-decoration:underline; }
   display:block;
 }
 
+/* Smaller centered figure */
+.figure-small{
+  max-width: 720px;   /* try 600–800px */
+  margin: 0 auto;     /* center the box */
+}
+.figure-small img{
+  width: 100%;
+  height: auto;
+}
+
 /* ===== Cards/Grid ===== */
 .grid{
   display:grid;

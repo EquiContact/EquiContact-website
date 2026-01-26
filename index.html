@@ -93,7 +93,7 @@
       </p>
 
       <h3>G-CompACT as an Localized Policy </h3>
-      <div class="figure">
+      <div class="figure figure-small">
         <img src="assets/imgs/G-CompACT_architecture.png" alt="G-CompACT Architecture" />
       </div>
       <p style="margin-top:10px;">
@@ -102,7 +102,7 @@
         The policy outputs relative poses and admittance gains for compliant control. 
         Moreover, using the language guidance to the wrist camera input imposes approximately left-invariance to SE(3) task transformation. 
         Therefore, G-CompACT is left-invariant localized policy, which is a key component for spatial generalization and SE(3)-equivariance.
-      </p>>
+      </p>
     </div>
 
     <div class ="section method">
@@ -118,9 +118,11 @@
       </ul>
       Which together can be summarized as following punchline:<br>
       <h3 style="text-align:center;">
-      Anchoring localized policy on a globally estimated reference frame for spatially generalizable manipulation.
+        <em>Anchoring localized policy on a globally estimated reference frame for spatially generalizable manipulation.</em>
       </h3>
-      
+      <p style="margin-top:15px;">
+      We also have a proof for full SE(3)-equivariance from vision input to force-control output in our paper. If you are interested, please check out the paper!
+      </p>
     </div>
 
     <!-- Results -->
