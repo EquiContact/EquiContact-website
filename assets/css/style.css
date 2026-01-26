@@ -99,12 +99,28 @@ a:hover{ text-decoration:underline; }
 }
 .panel h2{ margin-top: 0; }
 .panel.tldr{ background: var(--panel1); border-top: none; }
-.panel.abstract{ background: var(--panel2); border-top: none; }
+.panel.abstract{ background: var(--panel2);}
+
+/* .panel.abstract{ background: var(--panel2); border-top: none; } */
 
 /* Optional: make TL;DR text a bit larger */
 .panel.tldr p{
   font-size: 17px;
   line-height: 1.65;
+}
+
+/* Bigger typography for Method section */
+.section.method h2{
+  font-size: 17px;   /* Method title */
+}
+
+.section.method .card h3{
+  font-size: 15px;   /* card headings */
+}
+
+.section.method .card p{
+  font-size: 13px;   /* card text */
+  line-height: 1.6;
 }
 
 /* ===== Media blocks ===== */
