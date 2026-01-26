@@ -84,7 +84,7 @@
 
         (<b>Left</b>) The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF), a Geometric Compliant Action Chunking Transformer (G-CompACT), and a Geometric Admittance Controller (GAC).
         <ul class="bullets">
-          <li><b>Diff-EDF:</b> processes the scene point cloud to estimate global reference frames for pick-and-place tasks.</li>
+          <li><b>Diff-EDF:</b> processes the scene point cloud to estimate global reference frames for pick-and-place tasks. (Replaceable to other global reference frame estimators)</li>
           <li><b>G-CompACT:</b> outputs the relative pose and admittance gains from real-time wrist cameras and proprioceptive feedback using the provided reference frame.</li>
           <li><b>GAC:</b> executes compliant motion from action signals.</li>
         </ul>
@@ -92,11 +92,23 @@
         (<b>Right</b>) The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation, given the reference frames.
       </p>
 
-      <h3> “Anchoring localized policy on globally estimated reference frames for spatial generalization” </h3>
+      <h3>G-CompACT as an Localized Policy </h3>
+      <div class="figure">
+        <img src="assets/imgs/G-CompACT_architecture.png" alt="G-CompACT Architecture" />
+      </div>
+      <p style="margin-top:10px;">
+        G-CompACT is a low-level visuomotor policy that takes localized observations and outputs actions defined in the end-effector frame.
+        The policy inputs include (i) geometrically consistent error vectors (GCEV) between the current and target end-effector poses, (ii) wrist RGB images, and (iii) force-torque readings in end-effector frame.
+        The policy outputs relative poses and admittance gains for compliant control. 
+        Moreover, using the language guidance to the wrist camera input imposes approximately left-invariance to SE(3) task transformation. 
+        Therefore, G-CompACT is left-invariant localized policy, which is a key component for spatial generalization and SE(3)-equivariance.
+      </p>>
+
+      <!-- <h3> Anchoring localized policy on globally estimated reference frames for spatial generalization </h3>
       <p>
         The key idea of EquiContact is to combine a globally estimated reference frame with a localized visuomotor policy defined in the end-effector frame.
         This design allows the policy to generalize spatially to unseen task configurations by leveraging the equivariant properties of both the global frame estimation and the localized policy.
-      </p>
+      </p> -->
     </div>
 
     <!-- Results -->
