@@ -8,7 +8,7 @@
   --panel2:#f7f7f7;     /* Abstract */
 
   --max: 980px;         /* normal content width */
-  --wide: 1500px;       /* wide-section max width */
+  --wide: 1600px;       /* wide-section max width */
 }
 
 *{ box-sizing: border-box; }
