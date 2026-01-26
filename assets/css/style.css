@@ -115,7 +115,7 @@ a:hover{ text-decoration:underline; }
 }
 
 .section.method .card h3{
-  font-size: 20px;   /* card headings */
+  font-size: 24px;   /* card headings */
 }
 
 .section.method .card p{
@@ -151,7 +151,7 @@ a:hover{ text-decoration:underline; }
 }
 .card h3{
   margin:0 0 8px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* ===== Lists & Code ===== */
