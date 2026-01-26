@@ -116,7 +116,7 @@ a:hover{ text-decoration:underline; }
 
 /* A section that can exceed the main container width */
 .wide-section{
-  max-width: 1400px;   /* try 1200–1600 */
+  max-width: 2200px;   /* try 1200–1600 */
   margin: 0 auto;
   padding: 0 18px;     /* match your container side padding */
 }
