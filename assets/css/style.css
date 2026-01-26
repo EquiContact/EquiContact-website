@@ -111,15 +111,15 @@ a:hover{ text-decoration:underline; }
 
 /* Bigger typography for Method section */
 .section.method h2{
-  font-size: 17px;   /* Method title */
+  font-size: 27px;   /* Method title */
 }
 
 .section.method .card h3{
-  font-size: 15px;   /* card headings */
+  font-size: 20px;   /* card headings */
 }
 
 .section.method .card p{
-  font-size: 13px;   /* card text */
+  font-size: 18px;   /* card text */
   line-height: 1.6;
 }
 
@@ -151,7 +151,7 @@ a:hover{ text-decoration:underline; }
 }
 .card h3{
   margin:0 0 8px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* ===== Lists & Code ===== */
