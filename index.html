@@ -8,17 +8,22 @@
 </head>
 
 <body>
+
+  <!-- =========================
+       Main (normal-width) page
+       ========================= -->
   <div class="container">
 
     <!-- Header -->
     <h1 class="page-title">EquiContact</h1>
     <p class="subtitle">Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-Rich Tasks</p>
-    <p class="authors">Joohwan Seo, Arvind Kruthiventy, Soomi Lee, Megan Teng, Seoyeon Choi, Xiang Xhang, <br>
-       Jongeun Choi, and Roberto Horowitz</p>
-    <!-- Add Affiliations -->
-    <p class="affiliations">
-      UC Berkeley, Yonsei University
+
+    <p class="authors">
+      Joohwan Seo, Arvind Kruthiventy, Soomi Lee, Megan Teng, Seoyeon Choi, Xiang Xhang,<br>
+      Jongeun Choi, and Roberto Horowitz
     </p>
+
+    <p class="affiliations">UC Berkeley, Yonsei University</p>
 
     <div class="badges">
       <a class="badge" href="assets/pdfs/main.pdf">Main manuscript</a>
@@ -26,18 +31,22 @@
       <a class="badge" href="[arXiv]">arXiv</a>
       <a class="badge" href="[code]">Code* (coming)</a>
     </div>
-    <p class="note">* New version of code coming soon! In the meantime, you can check out our old simulation and experiment code linked at the bottom of the page.</p>
 
-    <!-- TL;DR (gray panel) -->
+    <p class="note">
+      * New version of code coming soon! In the meantime, you can check out our old simulation and experiment code linked at the bottom of the page.
+    </p>
+
+    <!-- TL;DR -->
     <div class="panel tldr">
       <h2>TL;DR</h2>
       <p>
         We present <b>EquiContact</b>, a hierarchical <b>SE(3)-equivariant vision-to-force policy</b> for contact-rich manipulation that achieves
-        <b>spatial generalization</b>. Our policy handles contact-rich tasks, and is only trained on a fixed task configuration but can generalize to unseen configurations with arbitrary SE(3) transformations.
+        <b>spatial generalization</b>. Our policy handles contact-rich tasks, and is only trained on a fixed task configuration but can generalize
+        to unseen configurations with arbitrary SE(3) transformations.
       </p>
     </div>
 
-    <!-- Teaser video (placed between TL;DR and Abstract) -->
+    <!-- Teaser / Main video -->
     <div class="section">
       <h2>Full EquiContact Pipeline on Peg-in-Hole + Extreme Transformations</h2>
       <div class="video">
@@ -46,24 +55,26 @@
         </video>
       </div>
       <p style="margin-top:10px;">
-        EquiContact full pipeline on peg-in-hole (PiH) task with spatial generalzation to unseen configurations. Video demonstrates 1) generalization to 
-        translational transformation (flat platform), 2) generalization to rotation + translational transformation (titled platform), and
-        3) demonstration of robustness to extreme transformations
+        EquiContact full pipeline on peg-in-hole (PiH) task with spatial generalization to unseen configurations.
+        Video demonstrates (1) generalization to translational transformation (flat platform), (2) generalization to rotation + translational transformation
+        (tilted platform), and (3) robustness to extreme transformations.
       </p>
     </div>
 
-    <!-- Abstract (lighter gray panel) -->
+    <!-- Abstract -->
     <div class="panel abstract">
       <h2>Abstract</h2>
       <p>
-        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations. 
+        This paper presents a framework for learning vision-based robotic policies for contact-rich manipulation tasks that generalize spatially across task configurations.
         We focus on achieving robust spatial generalization of the policy for the contact-rich tasks trained from a small number of demonstrations.
-        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF) 
-        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT). 
-        G-CompACT operates using only localized observations (geometrically consistent error vectors (GCEV), force-torque readings, and wrist-mounted RGB images) and produces actions defined in the end-effector frame.
-        Through these design choices, we show that the entire EquiContact pipeline is SE(3)-equivariant, from perception to force control. 
-        We also outline three key components for spatially generalizable contact-rich policies: compliance, localized policies, and induced equivariance. 
-        Real-world experiments on peg-in-hole (PiH), screwing, and surface wiping tasks demonstrate a near-perfect success rate and robust generalization to unseen spatial configurations, validating the proposed framework and principles. 
+        We propose EquiContact, a hierarchical policy composed of a high-level vision planner (Diffusion Equivariant Descriptor Field, Diff-EDF)
+        and a novel low-level compliant visuomotor policy (Geometric Compliant Action Chunking Transformers, G-CompACT).
+        G-CompACT operates using only localized observations (geometrically consistent error vectors (GCEV), force-torque readings, and wrist-mounted RGB images)
+        and produces actions defined in the end-effector frame.
+        Through these design choices, we show that the entire EquiContact pipeline is SE(3)-equivariant, from perception to force control.
+        We also outline three key components for spatially generalizable contact-rich policies: compliance, localized policies, and induced equivariance.
+        Real-world experiments on peg-in-hole (PiH), screwing, and surface wiping tasks demonstrate a near-perfect success rate and robust generalization to unseen spatial configurations,
+        validating the proposed framework and principles.
       </p>
     </div>
 
@@ -76,60 +87,71 @@
       <div class="figure">
         <img src="assets/imgs/Main_figure2.png" alt="Pipeline figure" />
       </div>
-      <p class="small" style="margin-top:10px;">
-        Figure: Overview of EquiContact.
-      </p>
+      <p class="small" style="margin-top:10px;">Figure: Overview of EquiContact.</p>
+
       <p style="margin-top:10px;">
-        We propose an EquiContact, a hierarchical, provably SE(3) vision-to-force equivariant policy for spatially generalizable contact-rich tasks. <br>
+        We propose an EquiContact, a hierarchical, provably SE(3) vision-to-force equivariant policy for spatially generalizable contact-rich tasks. <br><br>
 
-        (<b>Left</b>) The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF), a Geometric Compliant Action Chunking Transformer (G-CompACT), and a Geometric Admittance Controller (GAC).
-        <ul class="bullets">
-          <li><b>Diff-EDF:</b> processes the scene point cloud to estimate global reference frames for pick-and-place tasks. (Replaceable to other global reference frame estimators)</li>
-          <li><b>G-CompACT:</b> outputs the relative pose and admittance gains from real-time wrist cameras and proprioceptive feedback using the provided reference frame.</li>
-          <li><b>GAC:</b> executes compliant motion from action signals.</li>
-        </ul>
-        
-        (<b>Right</b>) The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation, given the reference frames.
+        (<b>Left</b>) The proposed EquiContact consists of a Diffusion-Equivariant Descriptor Field (Diff-EDF), a Geometric Compliant Action Chunking Transformer (G-CompACT),
+        and a Geometric Admittance Controller (GAC).
       </p>
 
-      <h3>G-CompACT as an Localized Policy </h3>
+      <ul class="bullets">
+        <li><b>Diff-EDF:</b> processes the scene point cloud to estimate global reference frames for pick-and-place tasks. (Replaceable to other global reference frame estimators)</li>
+        <li><b>G-CompACT:</b> outputs the relative pose and admittance gains from real-time wrist cameras and proprioceptive feedback using the provided reference frame.</li>
+        <li><b>GAC:</b> executes compliant motion from action signals.</li>
+      </ul>
+
+      <p style="margin-top:10px;">
+        (<b>Right</b>) The G-CompACT method is trained only on the fixed task configuration, but it can be generalized to task configurations that undergo arbitrary SE(3) transformation,
+        given the reference frames.
+      </p>
+
+      <h3>G-CompACT as a Localized Policy</h3>
       <div class="figure figure-small">
         <img src="assets/imgs/G-CompACT_architecture.png" alt="G-CompACT Architecture" />
       </div>
+
       <p style="margin-top:10px;">
         G-CompACT is a low-level visuomotor policy that takes localized observations and outputs actions defined in the end-effector frame.
-        The policy inputs include (i) geometrically consistent error vectors (GCEV) between the current and target end-effector poses, (ii) wrist RGB images, and (iii) force-torque readings in end-effector frame.
-        The policy outputs relative poses and admittance gains for compliant control. 
-        Moreover, using the language guidance to the wrist camera input imposes approximately left-invariance to SE(3) task transformation. 
-        Therefore, G-CompACT is left-invariant localized policy, which is a key component for spatial generalization and SE(3)-equivariance.
+        The policy inputs include (i) geometrically consistent error vectors (GCEV) between the current and target end-effector poses,
+        (ii) wrist RGB images, and (iii) force-torque readings in end-effector frame.
+        The policy outputs relative poses and admittance gains for compliant control.
+        Moreover, using the language guidance to the wrist camera input imposes approximately left-invariance to SE(3) task transformation.
+        Therefore, G-CompACT is a left-invariant localized policy, which is a key component for spatial generalization and SE(3)-equivariance.
       </p>
     </div>
 
-    <div class ="section method">
-      <h2> Main Takeaway: Principles to achieve Spatially Generalizable Policy for Contact-rich Tasks</h2>
-      We outline three key components for spatially generalizable contact-rich policies which are embodied in EquiContact:
+    <!-- Main takeaway -->
+    <div class="section method">
+      <h2>Main Takeaway: Principles to achieve Spatially Generalizable Policy for Contact-rich Tasks</h2>
+
+      <p>
+        We outline three key components for spatially generalizable contact-rich policies which are embodied in EquiContact:
+      </p>
+
       <ul class="bullets">
-        <li><b>Compliance:</b> The robot must be able to handle contact. We use Geometric Admittance Control (GAC), 
-          allowing the robot to react to forces and avoid becoming stuck or causing damage. Our policy learns to modulate these compliance gains in real-time.</li>
-        <li><b>Localized Policies:</b> The low-level policy, G-CompACT, utilizes only local information defined from the robot's end-effector frame (force-torque measurements and relative error) 
-          and outputs actions (relative pose and admittance gains) defined in this frame.</li>
-        <li><b>Induced Equivariance:</b> The localized policy is "anchored" to a reference frame provided by a high-level planner, Diff-EDF. 
-          This architectural design enables the spatial generalization property across the entire system, providing provable SE(3) vision-to-force equivariance.</li>
+        <li><b>Compliance:</b> The robot must be able to handle contact. We use Geometric Admittance Control (GAC), allowing the robot to react to forces and avoid becoming stuck or causing damage. Our policy learns to modulate these compliance gains in real-time.</li>
+        <li><b>Localized Policies:</b> The low-level policy, G-CompACT, utilizes only local information defined from the robot's end-effector frame (force-torque measurements and relative error) and outputs actions (relative pose and admittance gains) defined in this frame.</li>
+        <li><b>Induced Equivariance:</b> The localized policy is anchored to a reference frame provided by a high-level planner, Diff-EDF. This architectural design enables spatial generalization across the entire system, providing provable SE(3) vision-to-force equivariance.</li>
       </ul>
-      Which together can be summarized as following punchline:<br>
+
+      <p>Which together can be summarized as the following punchline:</p>
+
       <h3 style="text-align:center;">
         <em>Anchoring localized policy on a globally estimated reference frame for spatially generalizable manipulation.</em>
       </h3>
+
       <p style="margin-top:15px;">
-      We also have a proof for full SE(3)-equivariance from vision input to force-control output in our paper. If you are interested, please check out the paper!
+        We also have a proof for full SE(3)-equivariance from vision input to force-control output in our paper. If you are interested, please check out the paper!
       </p>
     </div>
 
-    <!-- Results -->
+    <!-- Results (success videos, normal width) -->
     <div class="section">
       <h2>Results (Videos)</h2>
 
-      <h3>Surface Wiping & Screwing Tasks</h3>
+      <h3>Surface Wiping &amp; Screwing Tasks</h3>
 
       <div class="grid two-col">
         <div class="vidcell">
@@ -156,57 +178,76 @@
         </p>
       </div>
     </div>
-<div class="wide-section">
-  <div style="height:18px;"></div>
-  <h3>Benchmark Experiments</h3>
 
-  <div class="grid grid-3big">
+  </div> <!-- end .container -->
 
-    <div class="vidcell">
-      <h3>ACT w/o GAC (In-dist)</h3>
-      <div class="video video-md" style="margin-top:10px;">
-        <video controls playsinline>
-          <source src="assets/videos/ACT_wo_gac.mp4" type="video/mp4" />
-        </video>
+
+  <!-- ==========================================
+       Wide (CRAFT-style) benchmark row (fullbleed)
+       ========================================== -->
+  <div class="fullbleed">
+    <div class="wide-section">
+      <div style="height:18px;"></div>
+
+      <h2>Benchmark Experiments</h2>
+
+      <div class="grid grid-3wide">
+
+        <div class="vidcell">
+          <h3>ACT w/o GAC (In-dist)</h3>
+          <div class="video video-md" style="margin-top:10px;">
+            <video controls playsinline>
+              <source src="assets/videos/ACT_wo_gac.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            In-distribution performance without compliant control (GAC).
+          </p>
+        </div>
+
+        <div class="vidcell">
+          <h3>ACT + GAC, w/o Gain Scheduling (In-dist)</h3>
+          <div class="video video-md" style="margin-top:10px;">
+            <video controls playsinline>
+              <source src="assets/videos/ACT_w_gac_wo_gainsched.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            Tests the effect of removing real-time gain scheduling.
+          </p>
+        </div>
+
+        <div class="vidcell">
+          <h3>EquiContact Ablation: Fixed Gains</h3>
+          <div class="video video-md" style="margin-top:10px;">
+            <video controls playsinline>
+              <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            Shows why real-time gain modulation matters for contact safety and stability.
+          </p>
+        </div>
+
       </div>
-      <p class="small" style="margin-top:10px;">
-        In-distribution performance without compliant control (GAC).
-      </p>
     </div>
+  </div>
 
-    <div class="vidcell">
-      <h3>ACT + GAC, w/o Gain Scheduling (In-dist)</h3>
-      <div class="video video-md" style="margin-top:10px;">
-        <video controls playsinline>
-          <source src="assets/videos/ACT_w_gac_wo_gainsched.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <p class="small" style="margin-top:10px;">
-        Tests the effect of removing real-time gain scheduling.
-      </p>
-    </div>
 
-    <div class="vidcell">
-      <h3>EquiContact Ablation: Fixed Gains</h3>
-      <div class="video video-md" style="margin-top:10px;">
-        <video controls playsinline>
-          <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <p class="small" style="margin-top:10px;">
-        Shows why real-time gain modulation matters for contact safety and stability.
-      </p>
-    </div>
+  <!-- =========================
+       Back to normal width
+       ========================= -->
+  <div class="container">
 
-    </div>
-</div>
-
-    <!-- Links -->
     <div class="section">
       <h2>Links</h2>
       <ul>
         <li><b>Paper:</b> <a href="assets/pdfs/main.pdf">Main manuscript</a> • <a href="assets/pdfs/appendix.pdf">Appendix</a> • <a href="[arXiv]">arXiv</a></li>
-        <li><b>Code:</b> <a href="[code]">GitHub (new version coming soon)</a> • <a href="https://github.com/Joohwan-Seo/EquiContact-Simulation"> Old Simulation Code</a> • <a href="https://github.com/Joohwan-Seo/EquiContact-Experiment"> Old Experiment Code</a>  </li>
+        <li><b>Code:</b> <a href="[code]">GitHub (new version coming soon)</a> •
+          <a href="https://github.com/Joohwan-Seo/EquiContact-Simulation">Old Simulation Code</a> •
+          <a href="https://github.com/Joohwan-Seo/EquiContact-Experiment">Old Experiment Code</a>
+        </li>
+        <li><b>Dataset:</b> <a href="[data]">Download</a></li>
       </ul>
     </div>
 
@@ -214,6 +255,7 @@
       Last updated: 2026-01-25.
     </div>
 
-  </div>
+  </div> <!-- end .container -->
+
 </body>
 </html>
