@@ -161,6 +161,9 @@
               <source src="assets/videos/Wiping_short.mp4" type="video/mp4" />
             </video>
           </div>
+          <p class="small" style="margin-top:10px;">
+          Task: Erase the marker on the flat/tilted whiteboard 
+          </p>
         </div>
 
         <div class="vidcell">
@@ -170,6 +173,9 @@
               <source src="assets/videos/screw_short.mp4" type="video/mp4" />
             </video>
           </div>
+          <p class="small" style="margin-top:10px;">
+          Task: Screw-lock the peg into the threaded flat/tilted platform
+          </p>
         </div>
 
         <p class="span-2" style="margin-top:10px;">
@@ -199,7 +205,7 @@
           </video>
         </div>
         <p class="small" style="margin-top:10px;">
-          In-distribution performance without compliant control (GAC).
+          Executed without GAC. Without complaint controller, the robot exceeds too high interaction force which activated safety stop.
         </p>
       </div>
 
@@ -211,19 +217,20 @@
           </video>
         </div>
         <p class="small" style="margin-top:10px;">
-          Tests the effect of removing real-time gain scheduling.
+          Executed with GAC, but with fixed admittance gains. Without real-time gain modulation, the robot often exerts excessive forces or becomes too stiff.
         </p>
       </div>
 
       <div class="vidcell">
-        <h3>EquiContact Ablation: Fixed Gains</h3>
+        <h3>CompACT (ACT + GAC + Gain Scheduling) (In-dist & OOD)</h3>
         <div class="video video-md" style="margin-top:10px;">
           <video controls playsinline>
-            <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
+            <source src="assets/videos/CompACT_short_small_size.mp4" type="video/mp4" />
           </video>
         </div>
         <p class="small" style="margin-top:10px;">
-          Shows why real-time gain modulation matters for contact safety and stability.
+          CompACT successfully finish the task by leveraging compliant control and real-time gain scheduling. 
+          However, it fails under out-of-distribution (OOD) task transformation, even on small translational displacement.
         </p>
       </div>
 
