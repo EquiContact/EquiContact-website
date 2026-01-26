@@ -31,13 +31,13 @@ a:hover{ text-decoration:underline; }
   padding: 34px 18px 70px;
 }
 
-/* Full-bleed wrapper so blocks can extend to viewport width */
+/* Full-bleed wrapper so blocks can extend to viewport width
 .fullbleed{
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 0 18px;
-}
+} */
 
 /* Wider-than-container inner wrapper (CRAFT-style wide content) */
 .wide-section{

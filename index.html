@@ -181,55 +181,52 @@
 
   </div> <!-- end .container -->
 
-
-  <!-- ==========================================
-       Wide (CRAFT-style) benchmark row (fullbleed)
-       ========================================== -->
-  <div class="fullbleed">
+  <!-- =========================
+       Wide-section for videos
+       ========================= -->
     <div class="wide-section">
-      <div style="height:18px;"></div>
+    <div style="height:18px;"></div>
 
-      <h2>Benchmark Experiments</h2>
+    <h2>Benchmark Experiments</h2>
 
-      <div class="grid grid-3wide">
+    <div class="grid grid-3wide">
 
-        <div class="vidcell">
-          <h3>ACT w/o GAC (In-dist)</h3>
-          <div class="video video-md" style="margin-top:10px;">
-            <video controls playsinline>
-              <source src="assets/videos/ACT_wo_gac.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <p class="small" style="margin-top:10px;">
-            In-distribution performance without compliant control (GAC).
-          </p>
+      <div class="vidcell">
+        <h3>ACT w/o GAC (In-dist)</h3>
+        <div class="video video-md" style="margin-top:10px;">
+          <video controls playsinline>
+            <source src="assets/videos/ACT_wo_gac.mp4" type="video/mp4" />
+          </video>
         </div>
-
-        <div class="vidcell">
-          <h3>ACT + GAC, w/o Gain Scheduling (In-dist)</h3>
-          <div class="video video-md" style="margin-top:10px;">
-            <video controls playsinline>
-              <source src="assets/videos/ACT_w_gac_wo_gainsched.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <p class="small" style="margin-top:10px;">
-            Tests the effect of removing real-time gain scheduling.
-          </p>
-        </div>
-
-        <div class="vidcell">
-          <h3>EquiContact Ablation: Fixed Gains</h3>
-          <div class="video video-md" style="margin-top:10px;">
-            <video controls playsinline>
-              <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <p class="small" style="margin-top:10px;">
-            Shows why real-time gain modulation matters for contact safety and stability.
-          </p>
-        </div>
-
+        <p class="small" style="margin-top:10px;">
+          In-distribution performance without compliant control (GAC).
+        </p>
       </div>
+
+      <div class="vidcell">
+        <h3>ACT + GAC, w/o Gain Scheduling (In-dist)</h3>
+        <div class="video video-md" style="margin-top:10px;">
+          <video controls playsinline>
+            <source src="assets/videos/ACT_w_gac_wo_gainsched.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="small" style="margin-top:10px;">
+          Tests the effect of removing real-time gain scheduling.
+        </p>
+      </div>
+
+      <div class="vidcell">
+        <h3>EquiContact Ablation: Fixed Gains</h3>
+        <div class="video video-md" style="margin-top:10px;">
+          <video controls playsinline>
+            <source src="assets/videos/ablation_no_compliance.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="small" style="margin-top:10px;">
+          Shows why real-time gain modulation matters for contact safety and stability.
+        </p>
+      </div>
+
     </div>
   </div>
 
