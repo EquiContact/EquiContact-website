@@ -103,12 +103,24 @@
         Moreover, using the language guidance to the wrist camera input imposes approximately left-invariance to SE(3) task transformation. 
         Therefore, G-CompACT is left-invariant localized policy, which is a key component for spatial generalization and SE(3)-equivariance.
       </p>>
+    </div>
 
-      <!-- <h3> Anchoring localized policy on globally estimated reference frames for spatial generalization </h3>
-      <p>
-        The key idea of EquiContact is to combine a globally estimated reference frame with a localized visuomotor policy defined in the end-effector frame.
-        This design allows the policy to generalize spatially to unseen task configurations by leveraging the equivariant properties of both the global frame estimation and the localized policy.
-      </p> -->
+    <div class ="section method">
+      <h2> Main Takeaway: Principles to achieve Spatially Generalizable Policy for Contact-rich Tasks</h2>
+      We outline three key components for spatially generalizable contact-rich policies which are embodied in EquiContact:
+      <ul class="bullets">
+        <li><b>Compliance:</b> The robot must be able to handle contact. We use Geometric Admittance Control (GAC), 
+          allowing the robot to react to forces and avoid becoming stuck or causing damage. Our policy learns to modulate these compliance gains in real-time.</li>
+        <li><b>Localized Policies:</b> The low-level policy, G-CompACT, utilizes only local information defined from the robot's end-effector frame (force-torque measurements and relative error) 
+          and outputs actions (relative pose and admittance gains) defined in this frame.</li>
+        <li><b>Induced Equivariance:</b> The localized policy is "anchored" to a reference frame provided by a high-level planner, Diff-EDF. 
+          This architectural design enables the spatial generalization property across the entire system, providing provable SE(3) vision-to-force equivariance.</li>
+      </ul>
+      Which together can be summarized as following punchline:<br>
+      <h3>
+      Anchoring localized policy on a globally estimated reference frame for spatially generalizable manipulation.
+      </h3>
+      
     </div>
 
     <!-- Results -->
